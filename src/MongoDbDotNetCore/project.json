@@ -1,10 +1,9 @@
-﻿{
+{
     "dependencies": {
         "Microsoft.NETCore.App": {
             "version": "1.0.1",
             "type": "platform"
         },
-        "MongoDB.Driver.Core": "2.3.0",
         "Microsoft.AspNetCore.Diagnostics": "1.0.0",
         "Microsoft.AspNetCore.Mvc": "1.0.1",
         "Microsoft.AspNetCore.Routing": "1.0.1",
@@ -15,9 +14,28 @@
         "Microsoft.Extensions.Logging": "1.0.0",
         "Microsoft.Extensions.Logging.Console": "1.0.0",
         "Microsoft.Extensions.Logging.Debug": "1.0.0",
-        "Microsoft.Extensions.Options.ConfigurationExtensions": "1.0.0"
+        "Microsoft.Extensions.Options.ConfigurationExtensions": "1.0.0",
+        "Microsoft.AspNetCore.Razor.Tools": {
+            "version": "1.0.0-preview2-final",
+            "type": "build"
+        },
+        "Microsoft.VisualStudio.Web.CodeGeneration.Tools": {
+            "version": "1.0.0-preview2-update1",
+            "type": "build"
+        },
+        "Microsoft.VisualStudio.Web.CodeGenerators.Mvc": {
+            "version": "1.0.0-preview2-update1",
+            "type": "build"
+        },
+        "MongoDB.Driver": "2.4.0-beta1"
     },
     "tools": {
+        "Microsoft.VisualStudio.Web.CodeGeneration.Tools": {
+            "version": "1.0.0-preview2-update1",
+            "imports": [
+                "portable-net45+win8"
+            ]
+        }
     },
     "frameworks": {
         "netcoreapp1.0": {
@@ -29,7 +47,8 @@
     },
     "buildOptions": {
         "emitEntryPoint": true,
-        "preserveCompilationContext": true
+        "preserveCompilationContext": true,
+        "debugType": "portable"
     },
     "runtimeOptions": {
         "configProperties": {
@@ -40,11 +59,16 @@
         "include": [
             "wwwroot",
             "**/*.cshtml",
-            "appsettings.json"
+            "appsettings.json",
+            "docker-compose.yml",
+            "docker-compose.debug.yml",
+            "Dockerfile.debug",
+            "Dockerfile",
+            ".dockerignore"
         ]
     },
     "scripts": {
-        "prepublish": [ ],
-        "postpublish": [ ]
+        "prepublish": [],
+        "postpublish": []
     }
 }

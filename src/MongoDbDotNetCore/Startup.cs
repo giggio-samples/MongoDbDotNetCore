@@ -29,6 +29,7 @@ namespace MongoDbDotNetCore
         {
             // Add framework services.
             services.AddMvc();
+            services.AddMongo(Configuration.GetSection("Mongo"));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -40,7 +41,6 @@ namespace MongoDbDotNetCore
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
-                app.UseBrowserLink();
             }
             else
             {
