@@ -20,7 +20,7 @@ namespace MongoDbDotNetCore.Controllers
         {
             var allPeopleCursor = await people.FindAsync(FilterDefinition<Person>.Empty);
             var allPeople = await allPeopleCursor.ToListAsync();
-            return base.View(allPeople);
+            return View(allPeople);
         }
 
         // GET: People/Details/5
@@ -50,7 +50,7 @@ namespace MongoDbDotNetCore.Controllers
         {
             var personCursor = await people.FindAsync(Builders<Person>.Filter.Eq(p => p.Id, ObjectId.Parse(id)));
             var person = await personCursor.FirstOrDefaultAsync();
-            return base.View(person);
+            return View(person);
         }
 
         // POST: People/Edit/5
